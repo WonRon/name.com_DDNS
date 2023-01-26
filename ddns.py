@@ -6,12 +6,12 @@ import time
 # ------------------相关配置------------------ #
 
 isloop=1 #是否循环
-acct_name="username" # name.com的用户名
-password="password" # name.com的密码
-domain_name="" # 域名,如name.com
-name="" # 子域名,如login.name.com
+acct_name="muhefeng" # name.com的用户名
+password="woainiA1" # name.com的密码
+domain_name="131394.xyz" # 域名,如name.com
+name="desktop.131394.xyz" # 子域名,如login.name.com
 create_date="2023-01-01 05:13:22" # 创建时间
-id="" # DNS的ID
+id="221444403" # DNS的ID
 # ------------------相关配置------------------ #
 
 
@@ -59,8 +59,8 @@ def ddns():
     # 在header中加入获取的csrf_token
     s.headers.update({"x-csrf-token-auth":csrf_token})
     #更新DNS信息
-    r = s.put(url="https://www.name.com/api/v3/domain/"+"domain_name"+"/dns/"+id,json=update,proxies=proxies).text
-    if r==[]:
+    r = s.put(url="https://www.name.com/api/v3/domain/"+domain_name+"/dns/"+id,json=update,proxies=proxies).text
+    if r=="[]":
         print("=================================\n"+
         time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())+":已更新DNS"+
         "=================================")
